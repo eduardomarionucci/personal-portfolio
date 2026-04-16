@@ -54,7 +54,7 @@ async function getCounter() {
         const response = await fetch('https://api.github.com/users/eduardomarionucci');
         const counter = await response.json();
 
-            document.getElementById('repo-count').textContent = counter.public_repos;
+            document.getElementById('repo-count').textContent = counter.public_repos + ' repositories';
     } catch (e) {
         document.getElementById('repo-count').textContent = '—';
     }

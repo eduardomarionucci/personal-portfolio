@@ -42,11 +42,15 @@
             }
         ]
     },
+    "skills": {
+        "title": "SKILLS",
+        "description": "A selection of technologies and tools I have experience with."
+    },
     "experience": {
         "title": "EXPERIENCE",
         "list": [
             {
-                "title": "Junior Developer III - PagHiper",
+                "title": "Web Developer - PagHiper",
                 "period": "2025 - Present",
                 "description": "Working as a backend-focused developer on payment solutions, primarily involving Pix and internal financial systems. Responsible for building and maintaining APIs, handling transaction flows, and developing scalable features that support real-time payment processing. Also involved in improving internal tools and creating efficient solutions to optimize financial operations."
             }   ,
@@ -56,7 +60,7 @@
                 "description": "Worked with technical support, hardware and software maintenance, and network administration. Also responsible for managing the company's social media."
             },
             {
-                "title": "Scientific Initiation Scholar (PIBIC) - IFPR",
+                "title": "Scientific Initiation Scholar - IFPR",
                 "period": "Jun 2022 - Apr 2023",
                 "description": "Developed a technology showcase system for IFPR, focusing on log auditing and data integrity."
             },
