@@ -578,9 +578,11 @@ h3 {
 
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
         padding: 1rem;
+        display: flex;
+        align-items: center;
     }
 
     .menu-toggle {
