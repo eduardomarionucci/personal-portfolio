@@ -1,0 +1,148 @@
+{
+    "nav": {
+        "home": "Home",
+        "projects": "Projects",
+        "experience": "Experiências",
+        "education": "Educação"
+    },
+    "landing": {
+        "greeting": "Hi,",
+        "description": "Web Developer · PHP · Laravel · JavaScript"
+    },
+    "about": {
+        "title": "ABOUT",
+        "description": "Sou um desenvolvedor web baseado no Brasil, apaixonado por construir aplicações limpas e funcionais. Meu foco está em sistemas backend com PHP e Laravel, enquanto também trabalho com JavaScript e Vue.js no frontend. Atualmente estou expandindo para o desenvolvimento full-stack moderno e sempre buscando novos desafios para crescer."
+    },
+    "projects": {
+        "title": "PROJECTS",
+        "list": [
+            {
+                "image": "./assets/img/coffee-control-thumb.png",
+                "title": "Cafe Management System",
+                "description": "Conjunto de classes desenvolvido na formação Full Stack PHP da UpInside para integração com o webservice de uma plataforma SaaS. Tem como objetivo gerenciar produtos e pedidos de um café.",
+                "tags": [
+                    "PHP",
+                    "Laravel",
+                    "MySQL"
+                ],
+                "link": "https://github.com/eduardomarionucci/cafe-management",
+                "cta": "Ver mais"
+            },
+            {
+                "image": "./assets/img/control-thumb.png",
+                "title": "Game Group",
+                "description": "Projeto de estudo de uma rede social para gamers. Tecnologias: PHP, MySQL, JavaScript, HTML/CSS.",
+                "tags": [
+                    "PHP",
+                    "MySQL",
+                    "Bootstrap"
+                ],
+                "link": "https://github.com/eduardomarionucci/gamegroup",
+                "cta": "Ver mais"
+            }
+        ]
+    },
+    "experience": {
+        "title": "EXPERIENCE",
+        "list": [
+            {
+                "title": "Desenvolvedor Júnior III - PagHiper",
+                "period": "2025 - Atual",
+                "description": "Atuo como desenvolvedor com foco em backend, criando soluções voltadas para pagamentos, principalmente utilizando Pix e sistemas financeiros internos. Sou responsável pela construção e manutenção de APIs, tratamento de fluxos de transações e desenvolvimento de funcionalidades escaláveis para processamento em tempo real. Também contribuo com melhorias em ferramentas internas e otimização de operações financeiras."
+            },
+            {
+                "title": "Estagiário de TI - Grupo Brotas",
+                "period": "Fev 2024 - Mai 2024",
+                "description": "Atuação em suporte técnico, manutenção de hardware e software, e administração de redes. Também responsável pelas redes sociais da empresa."
+            },
+            {
+                "title": "Bolsista de Iniciação Científica (PIBIC) - IFPR",
+                "period": "Jun 2022 - Abr 2023",
+                "description": "Desenvolvimento de um sistema de vitrine tecnológica para o IFPR, com foco em auditoria de logs e integridade de dados."
+            },
+            {
+                "title": "Voluntariado - Interact Club de Terra Rica",
+                "period": "Jul 2019 - Jun 2020",
+                "description": "Liderança de equipe em projetos sociais, organização de eventos beneficentes e representação institucional do clube."
+            }
+        ]
+    },
+    "education": {
+        "title": "EDUCAÇÃO",
+        "description": "Minha formação acadêmica e cursos complementares que moldam minha base técnica.",
+        "list": [
+            {
+                "title": "Engenharia de Software",
+                "institution": "IFPR - Instituto Federal do Paraná",
+                "period": "2024 - Cursando",
+                "description": "Atualmente no segundo ano, com foco em fundamentos de computação e engenharia.",
+                "tags": [
+                    "Algoritmos",
+                    "Estrutura de Dados",
+                    "Engenharia de Requisitos"
+                ]
+            },
+            {
+                "title": "Técnico em Informática",
+                "institution": "IFPR - Instituto Federal do Paraná",
+                "period": "2020 - 2023",
+                "description": "Formação técnica com ênfase em desenvolvimento de software, redes e hardware.",
+                "tags": [
+                    "Programação",
+                    "Redes",
+                    "Manutenção"
+                ]
+            },
+            {
+                "title": "Curso Cisco Networking Academy",
+                "institution": "Cisco",
+                "period": "2022",
+                "description": "Formação em redes de computadores, protocolos e segurança.",
+                "tags": [
+                    "Redes",
+                    "Segurança",
+                    "Protocolos"
+                ]
+            },
+            {
+                "title": "NDG Linux Unhatched",
+                "institution": "NDG",
+                "period": "2023",
+                "description": "Formação em administração de sistemas Linux.",
+                "tags": [
+                    "Linux",
+                    "Segurança",
+                    "Automação"
+                ]
+            },
+            {
+                "title": "Prêmios Rotários de Liderança Jovem (RYLA)",
+                "institution": "Rotary International",
+                "period": "2023",
+                "description": "Reconhecimento por liderança e engajamento comunitário."
+            },
+            {
+                "title": "Inglês Avançado Superior",
+                "institution": "CCAA",
+                "period": "",
+                "description": "Certificação de proficiência em inglês."
+            },
+            {
+                "title": "Desenvolvimento Full Stack PHP",
+                "institution": "UpInside Treinamentos",
+                "period": "",
+                "description": "Formação intensiva focada em PHP moderno e Laravel."
+            }
+        ]
+    },
+    "contact": {
+        "title": "CONTATO",
+        "description": "Vamos conversar? Entre em contato comigo",
+        "cta": "Enviar mensagem",
+        "form": {
+            "name": "Nome",
+            "email": "Email",
+            "message": "Mensagem"
+        }
+    }
+}

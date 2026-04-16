@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -16,17 +16,30 @@
 <body>
     <nav class="navbar">
         <a href="index.html" class="logo decoration-none text-center medium">
-            Eduardo <br> Marionucci
+            Eduardo
+            <br>
+            Marionucci
         </a>
-        <div>
-            <ul class="nav-items decoration-none light">
-                <li><a href="#landing">Home</a></li>
-                <li><a href="#about-me">Projects</a></li>
-                <li><a href="#experience">Experiences</a></li>
-                <li><a href="">Education</a>
-                </li>
-            </ul>
-        </div>
+        <button class="menu-toggle" onclick="toggleMenu()">
+            ☰
+        </button>
+        <ul class="nav-items decoration-none light" id="nav-menu">
+            <li><a href="#landing" data-i18n="nav.home">Home</a></li>
+            <li><a href="#about-me" data-i18n="nav.projects">Projects</a></li>
+            <li><a href="#experience" data-i18n="nav.experience">Experiences</a></li>
+            <li><a href="" data-i18n="nav.education">Education</a>
+            <li>
+                <div class="language-dropdown">
+                    <button class="lang-btn" onclick="toggleDropdown()">
+                        <span id="current-lang">EN</span>
+                    </button>
+                    <div class="lang-menu" id="lang-menu">
+                        <div class="lang-item" onclick="selectLanguage('en_US')">English (USA)</div>
+                        <div class="lang-item" onclick="selectLanguage('pt_BR')">Português (Brasil)</div>
+                    </div>
+                </div>
+            </li>
+        </ul>
     </nav>
     <section class="landing" id="hero">
         <div class="container">
@@ -36,19 +49,21 @@
                 </div>
                 <div class="col">
                     <div class="row flex-column align-items-center text-center text-white">
-                        <div class="col "><span class="bold">Olá,</span> sou</div>
+                        <div class="col "><span class="bold" data-i18n="landing.greeting">Hi,</span> I'm</div>
                         <div class="col landing-title col-12">Eduardo <br> Marionucci</div>
-                        <div class="col my-1">Desenvolvedor Web</div>
+                        <div class="col my-1" data-i18n="landing.description">Web Developer · PHP · Laravel · JavaScript
+                        </div>
                     </div>
                 </div>
                 <div class="col bracket bracket-right">
                     }
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <ul class="nav-items p-0">
+            <div class="row justify-content-center align-items-center">
+                <ul class="nav-items p-0 ">
                     <li><a href="index.html"><img width="24" height="24"
-                                src="https://img.icons8.com/material-rounded/24/github.png" alt="github" /></a></li>
+                                src="https://img.icons8.com/material-rounded/24/github.png" alt="github" />
+                            <span id="repo-count">...</span></a></li>
                     <li><a href="about.html"><img width="24" height="24"
                                 src="https://img.icons8.com/material-rounded/24/instagram-new.png"
                                 alt="instagram-new" /></a></li>
@@ -61,40 +76,73 @@
     </section>
     <section>
         <div class="container">
-            <section class="projects">
+            <section class="about-section" id="about">
                 <div class="row">
-                    <div class="col col-3 line line-first">
-                        <div class="sidebar-item-title">PROJECTS</div>
-                        <div class="sidebar-item-body">Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
-                            since
-                            the 1500s</div>
+                    <div class="col col-3 sticky-sidebar">
+                        <div class="sidebar-item-title" data-i18n="about.title">ABOUT</div>
+                    </div>
+                    <div class="col col-9">
+                        <div class="d-flex align-items-center g-2 p-2">
+                            <img src="./assets/img/picture.webp" alt="Eduardo Marionucci" class="about-photo" />
+                            <div class="about-text">
+                                <h2 class="about-name">Eduardo Marionucci</h2>
+                                <p class="about-bio" data-i18n="about.description">
+                                    I'm a web developer based in Brazil, passionate about building clean, functional
+                                    applications.
+                                    My focus is on backend systems with PHP and Laravel, while also working with
+                                    JavaScript and Vue.js on the front end.
+                                    I'm currently expanding into modern full-stack development and always looking for
+                                    new challenges to grow.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="projects-section" id="projects">
+                <div class="row">
+                    <div class="col col-3 sticky-sidebar">
+                        <div class="sidebar-item-title" data-i18n="projects.title">PROJECTS</div>
                     </div>
                     <div class="col col-9">
                         <div class="row row-cols-2 gy-2">
                             <div class="col">
                                 <div class="card">
-                                    <img src="./assets/img/cafe-control-thumb.png" class="cafe control thumb" alt="...">
+                                    <img src="./assets/img/coffee-control-thumb.png" class="cafe control thumb"
+                                        alt="...">
                                     <div class="card-body">
-                                        <h5 class="card-title">Cafe Management System</h5>
-                                        <p class="card-text">Is a small set of classes developed in UpInside's Full
+                                        <h5 class="card-title" data-i18n="projects.list.0.title">Cafe Management System
+                                        </h5>
+                                        <p class="card-text" data-i18n="projects.list.0.description">
+                                            Is a small set of classes developed in UpInside's Full
                                             Stack PHP Developer training for integration into the webservice of a SaaS
                                             platform developed in the course.
                                             It has the purpose of managing the cafe's products and orders.</p>
+                                        <div class="card-tags">
+                                            <span class="card-tag" data-i18n="projects.list.0.tags.0">PHP</span>
+                                            <span class="card-tag" data-i18n="projects.list.0.tags.1">Laravel</span>
+                                            <span class="card-tag" data-i18n="projects.list.0.tags.2">MySQL</span>
+                                        </div>
                                         <a href="https://github.com/eduardomarionucci/cafe-management"
-                                            class="btn btn-primary">Go to repo</a>
+                                            class="btn btn-primary" data-i18n="projects.list.0.cta">Go to repo</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="card">
-                                    <img src="./assets/img/game-group-thumb.png" class="card-img-top" alt="...">
+                                    <img src="./assets/img/control-thumb.png" class="card-img-top" alt="...">
                                     <div class="card-body">
-                                        <h5 class="card-title">Game Group</h5>
-                                        <p class="card-text">Study project of a social network for gamers. Technologies:
+                                        <h5 class="card-title" data-i18n="projects.list.1.title">Game Group</h5>
+                                        <p class="card-text" data-i18n="projects.list.1.description">Study project of a
+                                            social network for gamers. Technologies:
                                             PHP, MySQL, JavaScript, HTML/CSS.</p>
-                                        <a href="https://github.com/eduardomarionucci/gamegroup"
-                                            class="btn btn-primary">See more</a>
+                                        <div class="card-tags">
+                                            <span class="card-tag" data-i18n="projects.list.1.tags.0">PHP</span>
+                                            <span class="card-tag" data-i18n="projects.list.1.tags.1">MySQL</span>
+                                            <span class="card-tag" data-i18n="projects.list.1.tags.2">Bootstrap</span>
+                                        </div>
+                                        <a href="https://github.com/eduardomarionucci/gamegroup" class="btn btn-primary"
+                                            data-i18n="projects.list.1.cta">See more</a>
                                     </div>
                                 </div>
                             </div>
@@ -103,102 +151,97 @@
             </section>
             <section class="skills">
                 <div class="row">
-                    <div class="col col-3 pl-0 line">
-                        <div class="sidebar-item-title">SKILLS</div>
-                        <div class="sidebar-item-body">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum temporibus, tempora
-                            consequatur similique reiciendis est quibusdam itaque vero ad ipsa error unde nulla
-                            doloremque dignissimos sit hic, aspernatur dicta? Voluptatibus!
-                        </div>
+                    <div class="col sticky-sidebar col-3">
+                        <div class="sidebar-item-title" data-i18n="skills.title">SKILLS</div>
                     </div>
                     <div class="col col-9">
                         <div class="carousel">
                             <div class="group">
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=git" alt="git"></div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=css" alt="css"></div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=js" alt="javascript"></div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=php" alt="php"></div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=laravel" alt="laravel">
+                                <div class="skill"><img src="/assets/img/skills/git.svg" alt="git"></div>
+                                <div class="skill"><img src="/assets/img/skills/css.svg" alt="css"></div>
+                                <div class="skill"><img src="/assets/img/skills/js.svg" alt="javascript"></div>
+                                <div class="skill"><img src="/assets/img/skills/php.svg" alt="php"></div>
+                                <div class="skill"><img src="/assets/img/skills/laravel.svg" alt="laravel">
                                 </div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=ae" alt="after effects">
+                                <div class="skill"><img src="/assets/img/skills/ae.svg" alt="after effects">
                                 </div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=html" alt="html"></div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=eclipse" alt="eclipse">
+                                <div class="skill"><img src="/assets/img/skills/html.svg" alt="html"></div>
+                                <div class="skill"><img src="/assets/img/skills/eclipse.svg" alt="eclipse">
                                 </div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=redis" alt="redis">
+                                <div class="skill"><img src="/assets/img/skills/redis.svg" alt="redis">
                                 </div>
                             </div>
                             <div aria-hidden class="group">
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=git" alt="git"></div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=css" alt="css"></div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=js" alt="javascript"></div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=php" alt="php"></div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=laravel" alt="laravel">
+                                <div class="skill"><img src="./assets/img/skills/git.svg" alt="git"></div>
+                                <div class="skill"><img src="./assets/img/skills/css.svg" alt="css"></div>
+                                <div class="skill"><img src="./assets/img/skills/js.svg" alt="javascript"></div>
+                                <div class="skill"><img src="./assets/img/skills/php.svg" alt="php"></div>
+                                <div class="skill"><img src="./assets/img/skills/laravel.svg" alt="laravel">
                                 </div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=ae" alt="after effects">
+                                <div class="skill"><img src="./assets/img/skills/ae.svg" alt="after effects">
                                 </div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=html" alt="html"></div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=eclipse" alt="eclipse">
+                                <div class="skill"><img src="./assets/img/skills/html.svg" alt="html"></div>
+                                <div class="skill"><img src="./assets/img/skills/eclipse.svg" alt="eclipse">
                                 </div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=redis" alt="redis"></div>
+                                <div class="skill"><img src="./assets/img/skills/redis.svg" alt="redis"></div>
                             </div>
                         </div>
                         <div class="carousel">
                             <div class="group delay-1">
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=github" alt="github"></div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=gmail" alt="gmail"></div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=idea" alt="idea"></div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=ai" alt="illustrator"></div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=java" alt="java"></div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=jquery" alt="jquery"></div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=mysql" alt="mysql"></div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=notion" alt="notion"></div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=windows" alt="windows">
+                                <div class="skill"><img src="/assets/img/skills/github.svg" alt="github"></div>
+                                <div class="skill"><img src="/assets/img/skills/gmail.svg" alt="gmail"></div>
+                                <div class="skill"><img src="/assets/img/skills/idea.svg" alt="idea"></div>
+                                <div class="skill"><img src="/assets/img/skills/ai.svg" alt="illustrator"></div>
+                                <div class="skill"><img src="/assets/img/skills/java.svg" alt="java"></div>
+                                <div class="skill"><img src="/assets/img/skills/jquery.svg" alt="jquery"></div>
+                                <div class="skill"><img src="/assets/img/skills/mysql.svg" alt="mysql"></div>
+                                <div class="skill"><img src="/assets/img/skills/notion.svg" alt="notion"></div>
+                                <div class="skill"><img src="/assets/img/skills/windows.svg" alt="windows">
                                 </div>
                             </div>
                             <div aria-hidden class="group delay-1">
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=github" alt="github"></div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=gmail" alt="gmail"></div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=idea" alt="idea"></div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=ai" alt="illustrator"></div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=java" alt="java"></div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=jquery" alt="jquery"></div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=mysql" alt="mysql"></div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=notion" alt="notion"></div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=windows" alt="windows">
+                                <div class="skill"><img src="/assets/img/skills/github.svg" alt="github"></div>
+                                <div class="skill"><img src="/assets/img/skills/gmail.svg" alt="gmail"></div>
+                                <div class="skill"><img src="/assets/img/skills/idea.svg" alt="idea"></div>
+                                <div class="skill"><img src="/assets/img/skills/ai.svg" alt="illustrator"></div>
+                                <div class="skill"><img src="/assets/img/skills/java.svg" alt="java"></div>
+                                <div class="skill"><img src="/assets/img/skills/jquery.svg" alt="jquery"></div>
+                                <div class="skill"><img src="/assets/img/skills/mysql.svg" alt="mysql"></div>
+                                <div class="skill"><img src="/assets/img/skills/notion.svg" alt="notion"></div>
+                                <div class="skill"><img src="/assets/img/skills/windows.svg" alt="windows">
                                 </div>
                             </div>
                         </div>
                         <div class="carousel">
                             <div class="group delay-2">
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=npm" alt="npm"></div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=ps" alt="photoshop"></div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=phpstorm" alt="phpstorm">
+                                <div class="skill"><img src="/assets/img/skills/npm.svg" alt="npm"></div>
+                                <div class="skill"><img src="/assets/img/skills/ps.svg" alt="photoshop"></div>
+                                <div class="skill"><img src="/assets/img/skills/phpstorm.svg" alt="phpstorm">
                                 </div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=postgres" alt="postgres">
+                                <div class="skill"><img src="/assets/img/skills/postgres.svg" alt="postgres">
                                 </div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=postman" alt="postman">
+                                <div class="skill"><img src="/assets/img/skills/postman.svg" alt="postman">
                                 </div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=pr" alt="premiere"></div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=rabbitmq" alt="rabbitmq">
+                                <div class="skill"><img src="/assets/img/skills/pr.svg" alt="premiere"></div>
+                                <div class="skill"><img src="/assets/img/skills/rabbitmq.svg" alt="rabbitmq">
                                 </div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=vscode" alt="vscode"></div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=vue" alt="vue"></div>
+                                <div class="skill"><img src="/assets/img/skills/vscode.svg" alt="vscode"></div>
+                                <div class="skill"><img src="/assets/img/skills/vue.svg" alt="vue"></div>
                             </div>
                             <div aria-hidden class="group delay-2">
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=npm" alt="npm"></div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=ps" alt="photoshop"></div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=phpstorm" alt="phpstorm">
+                                <div class="skill"><img src="/assets/img/skills/npm.svg" alt="npm"></div>
+                                <div class="skill"><img src="/assets/img/skills/ps.svg" alt="photoshop"></div>
+                                <div class="skill"><img src="/assets/img/skills/phpstorm.svg" alt="phpstorm">
                                 </div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=postgres" alt="postgres">
+                                <div class="skill"><img src="/assets/img/skills/postgres.svg" alt="postgres">
                                 </div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=postman" alt="postman">
+                                <div class="skill"><img src="/assets/img/skills/postman.svg" alt="postman">
                                 </div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=pr" alt="premiere"></div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=rabbitmq" alt="rabbitmq">
+                                <div class="skill"><img src="/assets/img/skills/pr.svg" alt="premiere"></div>
+                                <div class="skill"><img src="/assets/img/skills/rabbitmq.svg" alt="rabbitmq">
                                 </div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=vscode" alt="vscode"></div>
-                                <div class="skill"><img src="https://skillicons.dev/icons?i=vue" alt="vue"></div>
+                                <div class="skill"><img src="/assets/img/skills/vscode.svg" alt="vscode"></div>
+                                <div class="skill"><img src="/assets/img/skills/vue.svg" alt="vue"></div>
 
                             </div>
                         </div>
@@ -207,34 +250,243 @@
             </section>
             <section class="experience">
                 <div class="row">
-                    <div class="col col-3 line pl-0">
-                        <div class="sidebar-item-title">EXPERIENCE</div>
-                        <div class="sidebar-item-body">Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
-                            since
-                            the 1500s</div>
+                    <div class="col col-3 sticky-sidebar">
+                        <div class="sidebar-item-title" data-i18n="experience.title">EXPERIENCE</div>
                     </div>
                     <div class="col col-9">
-                    
-                    </div>
+                        <div class="timeline">
+                            <div class="timeline-item mb-4">
+                                <div class="timeline-item-content">
+                                    <h3>Junior Developer III - PagHiper</h3>
+                                    <p class="about-role" data-i18n="experience.list.0.period">Nov 2025 - Present</p>
+                                    <p class="card-text" data-i18n="experience.list.0.description">
+                                        Desenvolvimento de um Sistema de Gerenciamento de Apenados (SGA).
+                                        Responsável pela arquitetura backend em Java com persistência de
+                                        dados (DAO/Hibernate)
+                                        e integração de funcionalidades críticas como gestão de detentos e
+                                        integração com webcam.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="timeline-item mb-4">
+                                <div class="timeline-item-content">
+                                    <h3>Estagiário de TI - Grupo Brotas</h3>
+                                    <p class="about-role" data-i18n="experience.list.1.period">Fev 2024 - Mai 2024</p>
+                                    <p class="card-text" data-i18n="experience.list.1.description">
+                                        Atuação em suporte técnico, manutenção de hardware e software, e
+                                        administração de redes.
+                                        Responsável pelas redes sociais da empresa, onde desenvolvi habilidades de
+                                        comunicação e marketing digital.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="timeline-item mb-4">
+                                <div class="timeline-item-content">
+                                    <h3>Bolsista de Iniciação Científica (PIBIC) - IFPR</h3>
+                                    <p class="about-role" data-i18n="experience.list.2.period">Jun 2022 - Abr 2023</p>
+                                    <p class="card-text" data-i18n="experience.list.2.description">
+                                        Desenvolvimento de um sistema de vitrine tecnológica para o IFPR.
+                                        O projeto resultou no meu TCC, onde foquei na implementação de um
+                                        sistema de auditoria de logs robusto para garantir a integridade dos
+                                        dados.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="timeline-item mb-4">
+                                <div class="timeline-item-content">
+                                    <h3>Presidente - Interact Club de Terra Rica</h3>
+                                    <p class="about-role" data-i18n="experience.list.3.period">Jul 2019 - Jun 2020</p>
+                                    <p class="card-text" data-i18n="experience.list.3.description">
+                                        Durante minha gestão como presidente do Interact Club de Terra Rica, no distrito
+                                        4630, liderei uma equipe jovem e engajada em projetos de impacto social,
+                                        planejando e implementando ações voltadas às necessidades da comunidade.
+                                        Organizei eventos beneficentes, campanhas de arrecadação de fundos e iniciativas
+                                        educativas, além de representar o clube em eventos regionais e fortalecer
+                                        parceria com Rotary Club de Terra Rica, nosso patrocinador.
+                                    </p>
+                                </div>
+                            </div>
             </section>
-            <section class="education">
+            <section class="education-section py-4" id="education">
                 <div class="row">
-                    <div class="col col-3 line line-last pl-0">
-                        <div class="sidebar-item-title">EDUCAÇÃO</div>
-                        <div class="sidebar-item-body">Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
-                            since
-                            the 1500s</div>
+                    <div class="col col-3 sticky-sidebar">
+                        <div class="sidebar-item-title" data-i18n="education.title">EDUCAÇÃO</div>
+                        <div class="sidebar-item-body" data-i18n="education.description">
+                            Minha formação acadêmica e cursos complementares que moldam minha base técnica.
+                        </div>
                     </div>
                     <div class="col col-9">
+                        <div class="education-container">
+                            <div class="education-item mb-4">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h3 class="about-name" data-i18n="education.list.0.name">Engenharia de Software
+                                        </h3>
+                                        <p class="about-role" data-i18n="education.list.0.institution">IFPR - Instituto
+                                            Federal do Paraná</p>
+                                    </div>
+                                    <span class="card-tag" data-i18n="education.list.0.period">2024 - Cursando</span>
+                                </div>
+                                <p class="card-text" data-i18n="education.list.0.description">
+                                    Atualmente no segundo ano, com foco em fundamentos de computação e engenharia.
+                                    Destaque para o desempenho em disciplinas como <strong>Cálculo, Estatística,
+                                        Arquitetura
+                                        de Software</strong> e Interação Humano-Computador (IHC).
+                                </p>
+                                <div class="card-tags mt-2">
+                                    <span class="card-tag" data-i18n="education.list.0.tag.1">Algoritmos</span>
+                                    <span class="card-tag" data-i18n="education.list.0.tag.2">Estrutura de Dados</span>
+                                    <span class="card-tag" data-i18n="education.list.0.tag.3">Engenharia de
+                                        Requisitos</span>
+                                </div>
+                            </div>
 
+                            <div class="education-item mb-4">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h3 class="about-name" data-i18n="education.list.1.name">Técnico em Informática
+                                        </h3>
+                                        <p class="about-role" data-i18n="education.list.1.institution">IFPR - Instituto
+                                            Federal do Paraná</p>
+                                    </div>
+                                    <span class="card-tag" data-i18n="education.list.1.period">2020 - 2023</span>
+                                </div>
+                                <p class="card-text" data-i18n="education.list.1.description">
+                                    Formação técnica com ênfase em desenvolvimento de software, redes e hardware.
+                                    Destaque para o desempenho em disciplinas como <strong>Programação, Redes de
+                                        Computadores</strong>
+                                    e Manutenção de Computadores.
+                                </p>
+                                <div class="card-tags mt-2">
+                                    <span class="card-tag" data-i18n="education.list.1.tag.1">Algoritmos</span>
+                                    <span class="card-tag" data-i18n="education.list.1.tag.2">Estrutura de Dados</span>
+                                    <span class="card-tag" data-i18n="education.list.1.tag.3">Engenharia de
+                                        Requisitos</span>
+                                </div>
+                            </div>
+
+                            <div class="education-item mb-4">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h3 class="about-name" data-i18n="education.list.2.name">Curso Cisco Networking
+                                            Academy</h3>
+                                        <p class="about-role" data-i18n="education.list.2.institution">Cisco</p>
+                                    </div>
+                                    <span class="card-tag" data-i18n="education.list.2.period">2022</span>
+                                </div>
+                                <p class="card-text" data-i18n="education.list.2.description">
+                                    Formação especializada em redes de computadores, incluindo conceitos de topologia,
+                                    protocolos e segurança.
+                                </p>
+                                <div class="card-tags mt-2">
+                                    <span class="card-tag" data-i18n="education.list.2.tag.1">Redes de
+                                        Computadores</span>
+                                    <span class="card-tag" data-i18n="education.list.2.tag.2">Segurança de Redes</span>
+                                    <span class="card-tag" data-i18n="education.list.2.tag.3">Protocolos de Rede</span>
+                                </div>
+                            </div>
+
+                            <div class="education-item mb-4">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h3 class="about-name" data-i18n="education.list.3.name">NDG Linux Unhatched
+                                        </h3>
+                                        <p class="about-role" data-i18n="education.list.3.institution">NDG - Network
+                                            Development Group</p>
+                                    </div>
+                                    <span class="card-tag" data-i18n="education.list.3.period">2023</span>
+                                </div>
+                                <p class="card-text" data-i18n="education.list.3.description">
+                                    Formação especializada em administração de sistemas Linux, incluindo conceitos de
+                                    segurança, automação e troubleshooting.
+                                </p>
+                                <div class="card-tags mt-2">
+                                    <span class="card-tag" data-i18n="education.list.3.tag.1">Linux</span>
+                                    <span class="card-tag" data-i18n="education.list.3.tag.2">Segurança</span>
+                                    <span class="card-tag" data-i18n="education.list.3.tag.3">Automação</span>
+                                </div>
+                            </div>
+
+                            <div class="education-item mb-4">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h3 class="about-name" data-i18n="education.list.4.name">Prêmios Rotários de
+                                            Liderança Jovem (RYLA)</h3>
+                                        <p class="about-role" data-i18n="education.list.4.institution">Rotary
+                                            International</p>
+                                    </div>
+                                    <span class="card-tag" data-i18n="education.list.4.period">2023</span>
+                                </div>
+                                <p class="card-text" data-i18n="education.list.4.description">
+                                    Reconhecimento por liderança e engajamento comunitário, desenvolvendo habilidades de
+                                    comunicação e trabalho em equipe.
+                                </p>
+                            </div>
+
+                            <div class="education-item mb-4">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h3 class="about-name" data-i18n="education.list.5.name">Inglês Avançado
+                                            Superior</h3>
+                                        <p class="about-role" data-i18n="education.list.5.institution">CCAA</p>
+                                        <p class="card-text" data-i18n="education.list.5.description">
+                                            Certificação de proficiência em inglês, com foco em habilidades avançadas de
+                                            comunicação e compreensão.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="education-item">
+                                <h3 class="about-name" data-i18n="education.list.6.name">Desenvolvimento Full Stack PHP
+                                </h3>
+                                <p class="about-role" data-i18n="education.list.6.institution">UpInside Treinamentos</p>
+                                <p class="card-text" data-i18n="education.list.6.description">
+                                    Formação intensiva focada no ecossistema PHP moderno, incluindo Laravel,
+                                    padrões de projeto, e arquitetura de sistemas escaláveis.
+                                </p>
+                            </div>
+                        </div>
                     </div>
+                </div>
+            </section>
+            <section class="contact-section" id="contact">
+                <div class="row">
+                    <div class="col col-3 sticky-sidebar">
+                        <div class="sidebar-item-title" data-i18n="contact.title">
+                            CONTACT
+                        </div>
+                        <div class="sidebar-item-body" data-i18n="contact.description">
+                            Let's talk? Get in touch with me
+                        </div>
+                    </div>
+                    <div class="col col-9">
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <label data-i18n="contact.form.name">Name</label>
+                                <input type="text" name="name" required />
+                            </div>
+                            <div class="form-group">
+                                <label data-i18n="contact.form.email">Email</label>
+                                <input type="email" name="email" required />
+                            </div>
+                            <div class="form-group">
+                                <label data-i18n="contact.form.message">Message</label>
+                                <textarea name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" data-i18n="contact.cta">
+                                Send message
+                            </button>
+                            <p class="form-status" id="form-status"></p>
+                        </form>
+                    </div>
+
                 </div>
             </section>
         </div>
         </div>
     </section>
 </body>
+<script src="js/script.js"></script>
 
 </html>

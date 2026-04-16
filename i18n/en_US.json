@@ -1,0 +1,151 @@
+{
+    "nav": {
+        "home": "Home",
+        "projects": "Projects",
+        "experience": "Experience",
+        "education": "Education"
+    },
+    "landing": {
+        "greeting": "Hi,",
+        "description": "Web Developer · PHP · Laravel · JavaScript"
+    },
+    "about": {
+        "title": "ABOUT",
+        "description": "I'm a web developer based in Brazil, passionate about building clean, functional applications. My focus is on backend systems with PHP and Laravel, while also working with JavaScript and Vue.js on the front end. I'm currently expanding into modern full-stack development and always looking for new challenges to grow."
+    },
+    "projects": {
+        "title": "PROJECTS",
+        "list": [
+            {
+                "image": "./assets/img/coffee-control-thumb.png",
+                "title": "Cafe Management System",
+                "description": "A small set of classes developed in UpInside's Full Stack PHP Developer training, designed for integration into a SaaS platform webservice. It aims to manage cafe products and orders.",
+                "tags": [
+                    "PHP",
+                    "Laravel",
+                    "MySQL"
+                ],
+                "link": "https://github.com/eduardomarionucci/cafe-management",
+                "cta": "Go to repo"
+            },
+            {
+                "image": "./assets/img/control-thumb.png",
+                "title": "Game Group",
+                "description": "Study project of a social network for gamers. Technologies include PHP, MySQL, JavaScript, and HTML/CSS.",
+                "tags": [
+                    "PHP",
+                    "MySQL",
+                    "Bootstrap"
+                ],
+                "link": "https://github.com/eduardomarionucci/gamegroup",
+                "cta": "See more"
+            }
+        ]
+    },
+    "experience": {
+        "title": "EXPERIENCE",
+        "list": [
+            {
+                "title": "Junior Developer III - PagHiper",
+                "period": "2025 - Present",
+                "description": "Working as a backend-focused developer on payment solutions, primarily involving Pix and internal financial systems. Responsible for building and maintaining APIs, handling transaction flows, and developing scalable features that support real-time payment processing. Also involved in improving internal tools and creating efficient solutions to optimize financial operations."
+            }   ,
+            {
+                "title": "IT Intern - Grupo Brotas",
+                "period": "Feb 2024 - May 2024",
+                "description": "Worked with technical support, hardware and software maintenance, and network administration. Also responsible for managing the company's social media."
+            },
+            {
+                "title": "Scientific Initiation Scholar (PIBIC) - IFPR",
+                "period": "Jun 2022 - Apr 2023",
+                "description": "Developed a technology showcase system for IFPR, focusing on log auditing and data integrity."
+            },
+            {
+                "title": "President - Interact Club of Terra Rica",
+                "period": "Jul 2019 - Jun 2020",
+                "description": "Led a youth team in social impact projects, organized fundraising events, and represented the club in regional activities."
+            }
+        ]
+    },
+    "education": {
+        "title": "EDUCATION",
+        "description": "My academic background and complementary courses that shape my technical foundation.",
+        "list": [
+            {
+                "title": "Software Engineering",
+                "institution": "IFPR - Federal Institute of Paraná",
+                "period": "2024 - Ongoing",
+                "description": "Currently in the second year, focusing on computing fundamentals and engineering principles.",
+                "tags": [
+                    "Algorithms",
+                    "Data Structures",
+                    "Requirements Engineering"
+                ]
+            },
+            {
+                "title": "Technical Degree in Informatics",
+                "institution": "IFPR - Federal Institute of Paraná",
+                "period": "2020 - 2023",
+                "description": "Technical education focused on software development, networking, and hardware.",
+                "tags": [
+                    "Programming",
+                    "Networking",
+                    "Maintenance"
+                ]
+            },
+            {
+                "title": "Cisco Networking Academy",
+                "institution": "Cisco",
+                "period": "2022",
+                "description": "Training in computer networks, including topology, protocols, and security.",
+                "tags": [
+                    "Networking",
+                    "Security",
+                    "Protocols"
+                ]
+            },
+            {
+                "title": "NDG Linux Unhatched",
+                "institution": "NDG",
+                "period": "2023",
+                "description": "Training in Linux system administration and fundamentals.",
+                "tags": [
+                    "Linux",
+                    "Security",
+                    "Automation"
+                ]
+            },
+            {
+                "title": "Rotary Youth Leadership Awards (RYLA)",
+                "institution": "Rotary International",
+                "period": "2023",
+                "description": "Recognition for leadership and community engagement."
+            },
+            {
+                "title": "Advanced English Certification",
+                "institution": "CCAA",
+                "period": "",
+                "description": "Certification of advanced English proficiency."
+            },
+            {
+                "title": "Full Stack PHP Development",
+                "institution": "UpInside Training",
+                "period": "",
+                "description": "Intensive training focused on modern PHP, Laravel, and scalable architecture."
+            }
+        ]
+    },
+    "contact": {
+        "title": "CONTACT",
+        "description": "Let's talk? Get in touch with me",
+        "email": "Email",
+        "phone": "Phone",
+        "social": "Social",
+        "cta": "Send message",
+        "form": {
+            "name": "Name",
+            "email": "Email",
+            "message": "Message"
+        }
+    }
+}
