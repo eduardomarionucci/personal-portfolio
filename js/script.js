@@ -52,9 +52,11 @@ function access(obj, path) {
 async function getCounter() {
     try {
         const response = await fetch('https://api.github.com/users/eduardomarionucci');
-        const counter = await response.json().public_repos;
+        const counter = await response.json();
 
-        document.getElementById('repo-count').textContent = counter;
+        console.log(counter);
+
+        document.getElementById('repo-count').textContent = counter.public_repos;
     } catch (e) {
         document.getElementById('repo-count').textContent = '—';
     }

@@ -576,6 +576,12 @@ h3 {
     color: #f7f7f7;
 }
 
+#repo-count {
+    margin-left: 6px;
+    color: white;
+    font-size: 1rem;
+}
+
 @media (max-width: 768px) {
     .navbar {
         flex-direction: row;
