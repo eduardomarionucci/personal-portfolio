@@ -1,7 +1,7 @@
 let currentLanguage = 'pt_BR';
 
 async function load(language) {
-    const response = await fetch(`i18n/${language}.json`);
+    const response = await fetch(`assets/i18n/${language}.json`);
     const translations = await response.json();
 
     document.querySelectorAll('[data-i18n]').forEach(element => {
@@ -54,9 +54,7 @@ async function getCounter() {
         const response = await fetch('https://api.github.com/users/eduardomarionucci');
         const counter = await response.json();
 
-        console.log(counter);
-
-        document.getElementById('repo-count').textContent = counter.public_repos;
+            document.getElementById('repo-count').textContent = counter.public_repos;
     } catch (e) {
         document.getElementById('repo-count').textContent = '—';
     }
