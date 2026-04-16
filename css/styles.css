@@ -527,6 +527,7 @@ h3 {
     color: inherit;
     font-family: inherit;
     transition: 0.2s ease;
+    color: white;
 }
 
 .form-group input:focus,
